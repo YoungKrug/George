@@ -23,6 +23,10 @@ int main()
 		while (!window.Closed())
 	{
 		window.Clear();
+		double x, y;
+		window.getMousePosition(x, y);
+		std::cout << x <<", " << y <<  std::endl;
+		
 #if 1
 		//std::cout << window.getWidth() << "  " << window.getHeight() << std::endl;
 		
