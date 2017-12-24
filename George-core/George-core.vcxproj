@@ -70,17 +70,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLFW\glfw-3.2.1.bin.WIN32\lib-vc2015;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\packages\glfw.3.2.1\build\native\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLFW\glfw-3.2.1.bin.WIN32\include;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\packages\glfw.3.2.1\build\native\include\GLFW;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLEW\glew-2.1.0\lib\Release\Win32;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLFW\glfw-3.2.1.bin.WIN32\lib-vc2015;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\packages\glfw.3.2.1\build\native\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLEW\glew-2.1.0\include;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLFW\glfw-3.2.1.bin.WIN32\include;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\packages\glfw.3.2.1\build\native\include\GLFW;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\Intermediates\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
