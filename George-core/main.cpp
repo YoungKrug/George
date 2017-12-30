@@ -1,11 +1,15 @@
 #include <lua.hpp>
 #include<luaconf.h>
 #include"Source/Graphics/windows.h"
+#include"Source/Vectors/maths.h"
+// Vectors is for maths as well
+// you can only create a namepace in a header file btw
 int getIntField(lua_State* L, const char* key);
 int main()
 {
 	using namespace george;
 	using namespace graphics;
+	using namespace maths;
 	lua_State*L = luaL_newstate();
 	luaL_openlibs(L);
 	luaL_loadfile(L, "GrabInputTest.lua");
@@ -18,14 +22,24 @@ int main()
 	GLuint vao;
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
+	vec4 a(0.2f,0.3f,0.8f,1.0f);
+	vec4 b(0.5f, 0.2f, 0.1f, 1.0f);
 	
+	vec4 c = a * b;
+	// c will be equal to a in this case...
+	// we can actually add them together becasue of the plus operator, crazy
+	
+	
+
+	// he made the function a reference type because we can just constantly do stuff like this etc.
+	
+
 
 		while (!window.Closed())
 	{
 		window.Clear();
-		double x, y;
-		window.getMousePosition(x, y);
-		std::cout << x <<", " << y <<  std::endl;
+	
+		std::cout << c << std::endl;
 		
 #if 1
 		//std::cout << window.getWidth() << "  " << window.getHeight() << std::endl;
