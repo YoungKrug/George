@@ -127,12 +127,17 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\Graphics\window.cpp" />
     <ClCompile Include="Source\Input\Inputs.cpp" />
+    <ClCompile Include="Source\Lua\LuaScript.cpp" />
+    <ClCompile Include="Source\Vectors\mat4.cpp" />
     <ClCompile Include="Source\Vectors\vec2.cpp" />
     <ClCompile Include="Source\Vectors\vec3.cpp" />
     <ClCompile Include="Source\Vectors\vec4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Graphics\windows.h" />
+    <ClInclude Include="Source\Lua\LuaIn.h" />
+    <ClInclude Include="Source\Lua\LuaScript.h" />
+    <ClInclude Include="Source\Vectors\mat4.h" />
     <ClInclude Include="Source\Vectors\maths.h" />
     <ClInclude Include="Source\Vectors\vec2.h" />
     <ClInclude Include="Source\Vectors\vec3.h" />
