@@ -133,6 +133,7 @@ namespace george
 			Window* win = (Window*)glfwGetWindowUserPointer(window);
 			
 			win->m_Keys[key] = action != GLFW_RELEASE;
+			std::cout << char(key)<<"  ";
 		 }
 		 void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
 		 {

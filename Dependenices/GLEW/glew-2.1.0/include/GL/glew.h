@@ -845,11 +845,12 @@ typedef char GLchar;
 #define GL_ALL_ATTRIB_BITS 0x000fffff
 #define GL_CLIENT_ALL_ATTRIB_BITS 0xffffffff
 
+
 GLAPI void GLAPIENTRY glAccum (GLenum op, GLfloat value);
 GLAPI void GLAPIENTRY glAlphaFunc (GLenum func, GLclampf ref);
 GLAPI GLboolean GLAPIENTRY glAreTexturesResident (GLsizei n, const GLuint *textures, GLboolean *residences);
 GLAPI void GLAPIENTRY glArrayElement (GLint i);
-GLAPI void GLAPIENTRY glBegin (GLenum mode);
+GLAPI void GLAPIENTRY glBegin (GLenum mode); 
 GLAPI void GLAPIENTRY glBindTexture (GLenum target, GLuint texture);
 GLAPI void GLAPIENTRY glBitmap (GLsizei width, GLsizei height, GLfloat xorig, GLfloat yorig, GLfloat xmove, GLfloat ymove, const GLubyte *bitmap);
 GLAPI void GLAPIENTRY glBlendFunc (GLenum sfactor, GLenum dfactor);

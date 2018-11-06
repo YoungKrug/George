@@ -33,3 +33,5 @@ ipch/
 *.vsp
 *.vspx
 *.sap
+George-core/Source/Vectors/maths.h
+*.h
