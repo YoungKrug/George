@@ -58,8 +58,8 @@ namespace george
 		   return stream;
 		}
 	   // right is const becasue we are reading from it, left is not because we are modifying it
-	   // These allow us to add them vectors together without modifying them, it is called whenever we are calling the operators and it is between 
-	   // two vec3s
+	   /// These allow us to add them vectors together without modifying them, it is called whenever we are calling the operators and it is between 
+	   /// two vec3s
 	   vec3 operator+(vec3 left, const vec3 right)
 	   {
 		   return left.add(right);

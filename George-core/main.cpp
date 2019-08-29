@@ -11,6 +11,7 @@ int main()
 	using namespace george;
 	using namespace graphics;
 	using namespace maths;
+
 	lua_State*L = luaL_newstate();
 	lua_register(L, "Howdy", Howdy);
 	luaL_openlibs(L);

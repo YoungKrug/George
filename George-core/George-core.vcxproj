@@ -70,8 +70,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>C:\Users\Greg\Documents\GitHub\GeorgeEngine\Dependenices\GLEW\glew-2.1.0\lib\Release\Win32;C:\Users\Greg\Documents\GitHub\GeorgeEngine\Dependenices\GLFW\glfw-3.2.1.bin.WIN32\lib-vc2015;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLEW\glew-2.1.0\lib\Release\Win32;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLFW\glfw-3.2.1.bin.WIN32\lib-vc2015;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\packages\glfw.3.2.1\build\native\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLEW\glew-2.1.0\include;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\packages\glfw.3.2.1\build\native\include\GLFW;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLEW\glew-2.1.0\lib\Release\Win32;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLFW\glfw-3.2.1.bin.WIN32\lib-vc2015;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\packages\glfw.3.2.1\build\native\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLEW\glew-2.1.0\include;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\Dependenices\GLFW\glfw-3.2.1.bin.WIN32\include;C:\Users\Gregory\Documents\Visual Studio 2017\Projects\George\packages\glfw.3.2.1\build\native\include\GLFW;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\Intermediates\</IntDir>
   </PropertyGroup>
@@ -81,7 +81,6 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Greg\Documents\GitHub\GeorgeEngine\packages\glfw.3.2.1\build\native\include;C:\Users\Greg\Documents\GitHub\GeorgeEngine\Dependenices\GLFW\glfw-3.2.1.bin.WIN32\include;C:\Users\Greg\Documents\GitHub\GeorgeEngine\Dependenices\GLEW\glew-2.1.0\include;C:\Users\Greg\Documents\GitHub\GeorgeEngine\packages\glfw.3.2.1\build\native\lib\v100\Win32\static;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -147,17 +146,17 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\glfw.redist.3.2.1\build\native\glfw.redist.targets" Condition="Exists('..\packages\glfw.redist.3.2.1\build\native\glfw.redist.targets')" />
+    <Import Project="..\packages\glfw.3.2.1\build\native\glfw.targets" Condition="Exists('..\packages\glfw.3.2.1\build\native\glfw.targets')" />
     <Import Project="..\packages\lua.redist.5.3.4\build\native\lua.redist.targets" Condition="Exists('..\packages\lua.redist.5.3.4\build\native\lua.redist.targets')" />
     <Import Project="..\packages\lua.5.3.4\build\native\lua.targets" Condition="Exists('..\packages\lua.5.3.4\build\native\lua.targets')" />
-    <Import Project="..\packages\glfw.3.2.1.5\build\native\glfw.targets" Condition="Exists('..\packages\glfw.3.2.1.5\build\native\glfw.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\glfw.redist.3.2.1\build\native\glfw.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glfw.redist.3.2.1\build\native\glfw.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\glfw.3.2.1\build\native\glfw.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glfw.3.2.1\build\native\glfw.targets'))" />
     <Error Condition="!Exists('..\packages\lua.redist.5.3.4\build\native\lua.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\lua.redist.5.3.4\build\native\lua.redist.targets'))" />
     <Error Condition="!Exists('..\packages\lua.5.3.4\build\native\lua.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\lua.5.3.4\build\native\lua.targets'))" />
-    <Error Condition="!Exists('..\packages\glfw.3.2.1.5\build\native\glfw.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glfw.3.2.1.5\build\native\glfw.targets'))" />
   </Target>
 </Project>
