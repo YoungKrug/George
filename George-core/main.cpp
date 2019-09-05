@@ -2,9 +2,9 @@
 #include<lua.hpp>
 #include<luaconf.h>
 #include<vector>
+#include"Source/Lua/LuaScript.h"
 #include"Source/Graphics/windows.h"
 #include"Source/Vectors/maths.h"
-#include"Source/Lua/LuaIn.h"
 // Vectors is for maths as well
 // you can only create a namepace in a header file btw
 int sum(int x, int y);
@@ -35,6 +35,7 @@ int main()
 	LuaScript vectorInfo("LuaTables.lua");
 	std::vector<std::string> ac = vectorInfo.getTableKeys("arr");
 	LuaScript windowSize("windowInformation.lua");
+	LuaScript playerScript("PlayerScript.lua");
 	int width = windowSize.get<int>("windowL.width"); // Lua convention for getting information
 	int height = windowSize.get<int>("windowL.height");
 	Window window("George!", height, width);
@@ -52,20 +53,41 @@ int main()
 	// c will be equal to a in this case...
 	// we can actually add them together becasue of the plus operator, crazy
 	// he made the function a reference type because we can just constantly do stuff like this etc.
+	float up = playerScript.get<float>("Player.startSpeed");
+	float right = playerScript.get<float>("Player.startSpeed");
+	float speed = playerScript.get<float>("Player.speed");
 	while (!window.Closed())
 	{
+
 		window.Clear();
-		//window.isKeyPressed;
+		if (window.isKeyPressed(GLFW_KEY_A))//<- to figure out if key is pressed
+		{
+			 up += -speed;
+		}
+		if (window.isKeyPressed(GLFW_KEY_D))//<- to figure out if key is pressed
+		{
+			up += speed;
+		}
+		if (window.isKeyPressed(GLFW_KEY_W))//<- to figure out if key is pressed
+		{
+			right += speed;
+		}
+		if (window.isKeyPressed(GLFW_KEY_S))//<- to figure out if key is pressed
+		{
+			right += -speed;
+		}
+		
+
 		//std::cout << c << std::endl;
 
 #if 1
 		//std::cout << window.getWidth() << "  " << window.getHeight() << std::endl;
 
-		glBegin(GL_QUADS);
-		glVertex2f(-0.5f, -0.5f);
-		glVertex2f(-0.5f, 0.5f);
-		glVertex2f(0.5f, 0.5f);
-		glVertex2f(0.5f, -0.5f);
+		glBegin(GL_POLYGON);
+		glVertex2f(-0.5f + up, -0.5f + right);
+		glVertex2f(-0.5f + up, 0.5f + right);
+		glVertex2f(0.5f + up, 0.5f + right);
+		glVertex2f(0.5f + up, -0.5f + right); // Basic movement with graphics didnt even think about it until I did it by accident lol
 		glEnd();
 
 #else

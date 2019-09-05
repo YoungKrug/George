@@ -11,7 +11,7 @@ namespace george
 	}
 	
 	std::vector<std::string> LuaScript::getTableKeys(const std::string& name) {
-		std::string code =
+		const char* code =
 			"function getKeys(name) "
 			"s = \"\""
 			"for k, v in pairs(_G[name]) do "
@@ -19,7 +19,7 @@ namespace george
 			"    end "
 			"return s "
 			"end"; // function for getting table keys
-		luaL_loadstring(L, code.c_str()); // execute code
+		luaL_loadstring(L, code); // execute code
 		lua_pcall(L, 0, 0, 0);
 		lua_getglobal(L, "getKeys"); // get function
 		lua_pushstring(L, name.c_str());

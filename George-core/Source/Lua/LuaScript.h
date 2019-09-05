@@ -18,7 +18,7 @@ namespace george
 			L = luaL_newstate();
 			luaL_openlibs(L);
 			// Since all lua files will be in the lua folder, they have to be!
-			std::string filePath = "C:/Users/Gregory/Documents/Visual Studio 2017/Projects/George/George-core/Source/Lua/" + fileName;
+			std::string filePath = "C:/Users/Greg/Documents/GitHub/GeorgeEngine/George-core/Source/Lua/" + fileName;
 			if (luaL_loadfile(L, filePath.c_str()) || lua_pcall(L, 0, 1, 0)) {
 				std::cout << "Error: script not loaded (" << fileName << ")" << std::endl;
 				L = 0;
