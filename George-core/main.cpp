@@ -43,7 +43,7 @@ int main()
 	//std::cout << glGetString(GL_VERSION) << std::endl;
 	GLuint vao;
 	glGenVertexArrays(1, &vao);
-	glBindVertexArray(vao);
+	glBindVertexArray(vao); 
 	vec4 a(0.2f, 0.3f, 0.8f, 1.0f);
 	vec4 b(0.5f, 0.2f, 0.1f, 1.0f);
 	vec4 c = a * b;
@@ -82,12 +82,30 @@ int main()
 
 #if 1
 		//std::cout << window.getWidth() << "  " << window.getHeight() << std::endl;
-
-		glBegin(GL_POLYGON);
+		glPointSize(10);
+		glLineWidth(15);
+		glBegin(GL_TRIANGLES); // So many different things with openGl AHHH
+		glLoadIdentity();	
+		glColor3f(0.1f, 0.4f, 0.4f);
+		//gluOrtho2D(100, 50, 50, 100);
 		glVertex2f(-0.5f + up, -0.5f + right);
+		glColor3f(0.1f, 0.4f, 0.4f);
 		glVertex2f(-0.5f + up, 0.5f + right);
+		glColor3f(0.5f, 0.1f, 0.4f);
 		glVertex2f(0.5f + up, 0.5f + right);
-		glVertex2f(0.5f + up, -0.5f + right); // Basic movement with graphics didnt even think about it until I did it by accident lol
+		glColor3f(0, 0.5f, 0.1f);
+		//glVertex2f(0.5f + up, -0.5f + right); // Basic movement with graphics didnt even think about it until I did it by accident lol
+		//glColor3f(0.8f, 0.7f, 0.1f);
+
+
+		glVertex2f(-0.5f, -0.5f);
+		glColor3f(0.1f, 0.4f, 0.4f);
+		glVertex2f(-0.5f, 0);
+		glColor3f(0.5f, 0.1f, 0.4f);
+		glVertex2f(0.5f, 0.5f);
+		glColor3f(0, 0.5f, 0.1f);
+		//glVertex2f(0.5f, -0.5f);
+		//glColor3f(0.8f, 0.7f, 0.1f);
 		glEnd();
 
 #else
